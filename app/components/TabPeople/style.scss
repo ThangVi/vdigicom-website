@@ -1,0 +1,17 @@
+#people{
+	li{
+		&.react-tabs__tab--selected{
+			&:after{opacity: 1;}
+		}
+		&:after{
+			content: '\25BC';
+	    position: absolute;
+	    bottom: -20px;
+	    transform: translate(-50%);
+	    left: 50%;
+	    color: var(--blue);
+	    outline: none;
+	    opacity: 0;
+		}
+	}
+}

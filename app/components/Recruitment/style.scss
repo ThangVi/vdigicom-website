@@ -1,0 +1,42 @@
+#recruitment{
+  .slick-prev, .slick-next{
+    position: absolute;
+    transform: none;
+    right: -100px;
+    border: 1px solid rgba(255,255,255,0.7);
+    text-align: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    &.slick-disabled{
+      border: 1px solid rgba(255,255,255,0.2);
+      &:hover{
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+    &:hover{
+      border: 1px solid rgba(255,255,255,1);
+      background-color: rgba(255,255,255,0.1);
+    }
+  }
+
+  .slick-prev{
+    top: 15px;
+    left: inherit;
+    &:before{
+      content: "\25B2";
+      font-size: 15px;
+    }
+  }
+
+  .slick-next{
+    bottom: 30px;
+    top: inherit;
+    &:before{
+      content: "\25BC";
+      font-size: 15px;      
+    }
+  }
+}

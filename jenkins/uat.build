@@ -1,0 +1,43 @@
+env.DEPLOYMENT_SERVER = '54.79.97.60'
+env.DEPLOYMENT_USER = 'fruitful'
+
+env.DEPLOYMENT_PATH = '/home/fruitful/bluebottlevn/deploy/pro'
+env.DEPLOYMENT_FOLDER = 'bluebottlevn-frontend'
+
+env.DEPLOYMENT_APP_PATH = '/var/www'
+env.DEPLOYMENT_APP_FOLDER = 'bluebottlevn-frontend'
+
+def preBuild(script) {
+  sh """
+    cd ${env.WORKSPACE}
+    rm -rf bin
+    rm -rf ${env.DEPLOYMENT_FOLDER}
+    mkdir ${env.DEPLOYMENT_FOLDER}
+  """
+}
+
+def build(script) {
+  sh """
+    cd ${env.WORKSPACE}
+    npm install
+    npm run build
+
+    rm -rf ${env.DEPLOYMENT_FOLDER}
+    mv build ${env.DEPLOYMENT_FOLDER}
+    tar -czf ${env.DEPLOYMENT_FOLDER}.tar.gz ${env.DEPLOYMENT_FOLDER}  
+  """
+}
+
+def postBuild(script) {
+  sh """
+    cd ${env.WORKSPACE}
+    scp ${env.WORKSPACE}/${env.DEPLOYMENT_FOLDER}.tar.gz ${env.DEPLOYMENT_USER}@${env.DEPLOYMENT_SERVER}:${env.DEPLOYMENT_PATH}
+    ssh ${env.DEPLOYMENT_USER}@${env.DEPLOYMENT_SERVER} /bin/bash <<'ENDSSH'
+    
+    rm -rf ${env.DEPLOYMENT_PATH}/${env.DEPLOYMENT_FOLDER}
+    tar -xzf ${env.DEPLOYMENT_PATH}/${env.DEPLOYMENT_FOLDER}.tar.gz -C ${env.DEPLOYMENT_PATH}
+    cp -rf  ${env.DEPLOYMENT_PATH}/${env.DEPLOYMENT_FOLDER}/* ${env.DEPLOYMENT_APP_PATH}/${env.DEPLOYMENT_APP_FOLDER}
+  """ 
+}
+
+return this;

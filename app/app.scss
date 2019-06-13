@@ -1,0 +1,103 @@
+
+@font-face {
+    font-family: 'UTM BryantLG';
+    src: url('fonts/subset-UTMBryantLG.eot');
+    src: url('fonts/subset-UTMBryantLG.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-UTMBryantLG.woff2') format('woff2'),
+        url('fonts/subset-UTMBryantLG.woff') format('woff'),
+        url('fonts/subset-UTMBryantLG.ttf') format('truetype'),
+        url('fonts/subset-UTMBryantLG.svg#UTMBryantLG') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UTM BryantLG';
+    src: url('fonts/subset-UTMBryantLGBold.eot');
+    src: url('fonts/subset-UTMBryantLGBold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/subset-UTMBryantLGBold.woff2') format('woff2'),
+        url('fonts/subset-UTMBryantLGBold.woff') format('woff'),
+        url('fonts/subset-UTMBryantLGBold.ttf') format('truetype'),
+        url('fonts/subset-UTMBryantLGBold.svg#UTMBryantLGBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+body {
+  font-size: 16px;
+  background: no-repeat center center/cover;
+  &.fontLoaded{
+    font-family: 'UTM BryantLG', san-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+$blue: #0e5cba;
+$bluehove: #024aa0;
+@import 'bootstrap/scss/bootstrap.scss';
+
+@import 'slickscss/_slick.scss';
+@import 'slickscss/_slickTheme.scss';
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+  background: #fff;
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
