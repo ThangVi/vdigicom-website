@@ -9,21 +9,10 @@ import './style.scss';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 function Recruitment(props) {
-  const job = [{
-    category: "Chuyên viên dự án",
-    created_at: "2019-05-03T10:20:16.000Z",
-    description: "Hồ sơ thầu",
-    friendly_url: null,
-    id: 4,
-    publish_date: "2019-05-14T10:20:15.000Z",
-    short_description: null,
-    title: "Join Our Team",
-    updated_at: "2019-05-14T03:55:39.000Z"
-  }]
   const date = new Date(props.job.publish_date);
 	return (
 		<div>
-    <Link to={`${props.match.url}job/${props.job.friendly_url}`}>
+    <Link to={`${props.match.url}job/${props.job.id}`}>
       <div className="recruitment-content">
         <div className="block-info">
             <div className="date">

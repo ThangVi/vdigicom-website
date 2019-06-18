@@ -161,10 +161,10 @@ export class JobPage extends React.PureComponent {
             <StyledRecruitment data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <Slider {...settings}>
               {jobs && jobs.map(job => (
-                <Recruitment key={job.friendly_url} job={job} match={match}/>
+                <Recruitment key={job.id} job={job} match={match}/>
               ))}
             </Slider>
-            <Route path={`${match.path}/:friendly_url`} component={JobDetailPage} />
+            <Route path={`${match.path}/:id`} component={JobDetailPage} />
           </StyledRecruitment>
           </div>
         </Container>

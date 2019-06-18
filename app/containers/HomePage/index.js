@@ -92,7 +92,33 @@ const news = [
     short_description: "",
     description: "",
     updated_at: "2019-05-24T07:09:48.000Z"
-  }]
+  }
+]
+
+const jobs = [
+  {
+    category: "Chuyên viên dự án",
+    created_at: "2019-05-03T10:20:16.000Z",
+    description: "Hồ sơ thầu",
+    friendly_url: null,
+    id: 1,
+    publish_date: "2019-05-14T10:20:15.000Z",
+    short_description: "Hồ sơ thầu",
+    title: "Tham gia cùng chúng tôi",
+    updated_at: "2019-05-14T03:55:39.000Z"
+  },
+  {
+    category: "Kế toán",
+    created_at: "2019-05-03T10:20:16.000Z",
+    description: "Kế toán tổng hợp",
+    friendly_url: null,
+    id: 2,
+    publish_date: "2019-05-14T10:20:15.000Z",
+    short_description: "Kế toán tổng hợp",
+    title: "Tham gia cùng chúng tôi",
+    updated_at: "2019-05-14T03:55:39.000Z"
+  }
+]
 
 const fullPageOptions = {
   anchors: ['home','about-us','services','members','join-us','news','partners','contact-us'],
@@ -140,8 +166,6 @@ export class HomePage extends React.PureComponent {
       openNews: [],
       menuOpen: false,
       currentPage: 0,
-      jobsData: [],
-      newsData: []
     };
     this.popup = this.popup.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -227,7 +251,7 @@ export class HomePage extends React.PureComponent {
                       <TabPeople /> 
                     </div>
                     <div className="section fp-auto-height-responsive" id="join-us">
-                      <JobPage match={match} page={currentPage} jobs={jobsData}/>
+                      <JobPage match={match} page={currentPage} jobs={jobs}/>
                     </div>
                     <div className="section fp-auto-height-responsive" id="news">
                       <News match={match} page={currentPage} post={news}/>
@@ -275,7 +299,7 @@ export class HomePage extends React.PureComponent {
                     <TabPeople /> 
                   </div>
                   <div className="section" id="jobpage">
-                    <JobPage match={match} page={currentPage} navigation={this.navigation(fullpageApi)} jobs={jobsData}/>
+                    <JobPage match={match} page={currentPage} navigation={this.navigation(fullpageApi)} jobs={jobs}/>
                   </div>
                   <div className="section" id="newspage">
                     <News match={match} page={currentPage} navigation={this.navigation(fullpageApi)} post={news}/>
