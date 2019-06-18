@@ -5,39 +5,10 @@ import vn from 'images/bg/vn.jpg';
 import thumbuc from 'images/bg/thumbuc.jpg';
 import thumbvn from 'images/bg/thumbvn.jpg';
 const Styled = styled.div `
-	.tab1 {
-		background:url('${uc}')  center center/cover no-repeat;
-	}
-	.tab2 {
+  height: 100vh;
+	&.tab {
 		background:url('${vn}')  center center/cover no-repeat;
 	}
-	.react-tabs__tab-panel--selected {
-		
-		@media (width: 1024px) {
-    	height: 55vh;
-    }	
-    @media (width: 768px) {
-    	height: 75vh;
-    }	
-    @media (min-width: 1025px) {
-    	height: 100vh;
-    }	
-    ${media.phone`
-    	height: auto;
-    `}
-	}
-
-	.tabtb2 {
-		background:url('${thumbuc}')  center center/cover no-repeat;
-	}
-	.tabtb1 {
-		background:url('${thumbvn}')  center center/cover no-repeat;
-	}
-  .react-tabs__tab-panel--selected { 
-  	.custom-fadein{
-  		animation-name: fadeIn; animation-duration: 1300ms; animation-timing-function: ease-in-out;
-  	}
-  }
 
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 	ul {
@@ -77,6 +48,12 @@ const Styled = styled.div `
 	    margin-bottom: 15px;
 	    font-weight: bold;
 		}
+    h3 {
+      text-transform: uppercase;
+      font-size: 22px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
 		p {
 			margin-bottom: 10px;
 			a {

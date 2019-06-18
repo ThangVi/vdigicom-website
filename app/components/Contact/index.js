@@ -20,110 +20,64 @@ const Map = ReactMapboxGl({
 });
 const zoom = [17.50];
 const coods = {
-	HANOI: [105.7822885, 21.0314765],
-	MELBOURNE: [144.973843, -37.8359532]
+	HANOI: [105.7971166, 21.0432193],
 };
 
 function Contact(props) {
   return (
-  	<Styled>
-			<Tabs>
-				<TabPanel className="tab2">
-					<Container>
-						<LogoWhite title="Contact Us"/>
-						<div className="main">
-							<Row>
-								<Col xs={12} sm={12} md={6} className="custom-fadein">
-									<div className="contact">
-										<h2>Bluebottle Digital Viet Nam</h2>
-										<p>3rd floor, VMT Building, Cau Giay District, Hanoi, Vietnam</p>
-										<p><a href="tel:(+84) 24 666 24320">(+84) 24 666 24320</a></p>
-										<p><a href="mailto:contact@bluebottle.vn">contact@bluebottle.vn</a></p>
-									</div>
-									<Map
-									  style="mapbox://styles/mapbox/streets-v8"
-									  center={coods.HANOI}
-									  zoom={[15]}
-									  containerStyle={{
-									    height: "250px",
-									    width: "100%"
-									  }}>
-									    <Layer
-									      type="symbol"
-									      id="marker"
-									      layout={{ "icon-image": "marker-15" }}>
-									      <Feature coordinates={coods.HANOI}/>
-									    </Layer>
-									    <Popup
-											  coordinates={coods.HANOI}
-											  offset={{
-											    'bottom': [0, -10]
-											  }}>
-											  <h6>Bluebottle Digital Viet Nam</h6>
-												<p className="mb-0">3rd floor, VMT Building, Cau Giay District, Hanoi, Vietnam</p>
-											</Popup>
-									    <ZoomControl/>
-									</Map>
-									
-								</Col>
-								<Col xs={12} sm={12} md={6} className="custom-fadein">
-									<ContactForm/>
-								</Col>
-							</Row>
+  	<Styled className="tab">
+			<Container>
+				<LogoWhite title="Contact Us"/>
+				<div className="main">
+					<Row>
+						<Col xs={12} sm={12} md={12} className="custom-fadein">
+							<div className="contact">
+								<Row>
+									<Col xs={12} sm={12} md={12}>
+										<h2>Công ty TNHH Mạng viễn thông số Việt Nam</h2>
+									</Col>
+									<Col xs={12} sm={12} md={4} className="text-center">
+										<h3>Địa chỉ</h3>
+										<p>134 Hoàng Sâm, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam</p>
+									</Col>
+									<Col xs={12} sm={12} md={4} className="text-center">
+										<h3>Điện thoại</h3>
+										<p><a href="tel:(+84) 24 3767 3162">(+84) 24 3767 3162</a></p>
+									</Col>
+									<Col xs={12} sm={12} md={4} className="text-center">
+										<h3>Email</h3>
+										<p><a href="mailto:vdigicom@gmail.com">vdigicom@gmail.com</a></p>
+									</Col>
+								</Row>
 							</div>
-						</Container>	
-					</TabPanel>
-				<TabPanel className="tab1">
-					<Container>
-						<LogoWhite title="Contact Us"/>
-						<div className="main">
-							<Row>
-								<Col xs={12} sm={12} md={6} className="custom-fadein">
-									<div className="contact">
-										<h2>Bluebottle Digital Australia</h2>
-										<p>823/1 Queens Road, Melbourne, VIC 3004, Australia</p>
-										<p><a href="tel:(+84) 24 666 24320">(+84) 24 666 24320</a></p>
-										<p><a href="mailto:contact@bluebottle.vn">contact@bluebottle.vn</a></p>
-									</div>
-									<Map
-									  style="mapbox://styles/mapbox/streets-v8"
-									  center={coods.MELBOURNE}
-									  zoom={[15]}
-									  containerStyle={{
-									    height: "250px",
-									    width: "100%"
+							<Map
+							  style="mapbox://styles/mapbox/streets-v8"
+							  center={coods.HANOI}
+							  zoom={[15]}
+							  containerStyle={{
+							    height: "350px",
+							    width: "100%"
+							  }}>
+							    <Layer
+							      type="symbol"
+							      id="marker"
+							      layout={{ "icon-image": "marker-15" }}>
+							      <Feature coordinates={coods.HANOI}/>
+							    </Layer>
+							    <Popup
+									  coordinates={coods.HANOI}
+									  offset={{
+									    'bottom': [0, -10]
 									  }}>
-									    <Layer
-									      type="symbol"
-									      id="marker"
-									      layout={{ "icon-image": "marker-15" }}>
-									      <Feature coordinates={coods.MELBOURNE}/>
-									    </Layer>
-									    <Popup
-											  coordinates={coods.MELBOURNE}
-											  offset={{
-											    'bottom': [0, -10]
-											  }}>
-											  <h6>Bluebottle Digital Australia</h6>
-												<p className="mb-0">823/1 Queens Road, Melbourne, VIC 3004, Australia</p>
-											</Popup>
-									    <ZoomControl/>
-									</Map>
-								</Col>
-								<Col xs={12} sm={12} md={6} className="custom-fadein">
-									<ContactForm/>
-								</Col>
-							</Row>
-						</div>
-					</Container>	
-				</TabPanel>
-	
-				<TabList>
-        <Tab className="tabtb2 tabtitle"><span>Viet Nam</span></Tab>
-        <Tab className="tabtb1 tabtitle"><span>Australia</span></Tab>
-    	</TabList>
-		</Tabs>
-		
+									  <h6>Công ty TNHH Mạng viễn thông số Việt Nam</h6>
+										<p className="mb-0">134 Hoàng Sâm, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam</p>
+									</Popup>
+							    <ZoomControl/>
+							</Map>
+						</Col>
+					</Row>
+				</div>
+			</Container>			
 		</Styled>
   );
 }
