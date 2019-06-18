@@ -34,14 +34,65 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
 import classnames from 'classnames';
 import uc from 'images/bg/uc.jpg';
-import Img from 'images/test/1.jpg';
-import Img2 from 'images/test/2.jpg';
-import Img3 from 'images/test/3.jpg';
+import News1 from 'images/news/1.jpg';
+import News2 from 'images/news/2.jpg';
+import News3 from 'images/news/3.jpg';
+import News4 from 'images/news/4.jpg';
 import Menu from 'containers/NavBar';
 import MenuIsMobile from 'containers/NavBarIsMobile';
 import {isMobile} from 'react-device-detect';
 import { makeSelectJobsList } from './selectors';
 import { API } from '../../network';
+
+const news = [
+  {
+    id: 10,
+    author: "QuyetLe",
+    created_at: "2017-03-23T14:47:20.000Z",
+    url: "bbbbbbbbbb",
+    img: News1,
+    publish_date: "2017-03-23T22:00:00.000Z",
+    title: "Gói thầu công khai quy hoạch tỉnh Thanh Hóa",
+    short_description: "Gói thầu công khai quy hoạch",
+    description: "",
+    updated_at: "2019-05-24T07:09:48.000Z"
+  },
+  {
+    id: 11,
+    author: "QuyetLe",
+    created_at: "2017-05-23T14:47:20.000Z",
+    url: "aaaaaaa",
+    img: News2,
+    publish_date: "2017-05-23T22:00:00.000Z",
+    title: "Gói thầu hội nghị truyền hình PVI",
+    short_description: "",
+    description: "",
+    updated_at: "2019-05-24T07:09:48.000Z"
+  },
+  {
+    id: 12,
+    author: "QuyetLe",
+    created_at: "2017-05-23T14:47:20.000Z",
+    url: "aaaaaaa",
+    img: News3,
+    publish_date: "2017-05-23T22:00:00.000Z",
+    title: "Gói thầu hội nghị truyền hình VNPT",
+    short_description: "",
+    description: "",
+    updated_at: "2019-05-24T07:09:48.000Z"
+  },
+  {
+    id: 13,
+    author: "QuyetLe",
+    created_at: "2017-05-23T14:47:20.000Z",
+    url: "aaaaaaa",
+    img: News4,
+    publish_date: "2017-05-23T22:00:00.000Z",
+    title: "Gói thầu hội nghị truyền hình Ủy Ban Dân Tộc",
+    short_description: "",
+    description: "",
+    updated_at: "2019-05-24T07:09:48.000Z"
+  }]
 
 const fullPageOptions = {
   anchors: ['home','about-us','services','members','join-us','news','partners','contact-us'],
@@ -132,23 +183,6 @@ export class HomePage extends React.PureComponent {
     this.setState({
       pageTitle: pageTitle[destination.anchor],
       currentPage: destination.index
-    },()=> {
-      if (this.state.currentPage === 4) {
-        API.getJobsList()
-        .then(resp => {
-          this.setState({
-            jobsData: resp
-          });
-        });
-      }
-      else if(this.state.currentPage === 5) {
-        API.getNewsList()
-        .then(resp => {
-          this.setState({
-            newsData: resp
-          });
-        });
-      }
     });
   }
 
@@ -169,7 +203,7 @@ export class HomePage extends React.PureComponent {
         <div>
           <MenuIsMobile />
           <Helmet>
-            <title>{this.state.pageTitle || 'BLUEBOTTLE VIETNAM - Home'}</title>
+            <title>{this.state.pageTitle || 'Vdigicom - Home'}</title>
           </Helmet>
           <ReactFullpage
             {...fullPageOptions2}
@@ -196,7 +230,7 @@ export class HomePage extends React.PureComponent {
                       <JobPage match={match} page={currentPage} jobs={jobsData}/>
                     </div>
                     <div className="section fp-auto-height-responsive" id="news">
-                      <News match={match} page={currentPage} post={newsData}/>
+                      <News match={match} page={currentPage} post={news}/>
                     </div>
                     <div className="section fp-auto-height-responsive" id="partners">
                       <Portfolio />
@@ -244,7 +278,7 @@ export class HomePage extends React.PureComponent {
                     <JobPage match={match} page={currentPage} navigation={this.navigation(fullpageApi)} jobs={jobsData}/>
                   </div>
                   <div className="section" id="newspage">
-                    <News match={match} page={currentPage} navigation={this.navigation(fullpageApi)} post={newsData}/>
+                    <News match={match} page={currentPage} navigation={this.navigation(fullpageApi)} post={news}/>
                   </div>
                   <div className="section" id="portfoliopage">
                     <Portfolio  navigation={this.navigation(fullpageApi)}/>

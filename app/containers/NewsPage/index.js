@@ -83,7 +83,7 @@ export class New extends React.PureComponent {
             <News key={news.id} news={news} match={match}/>
           ))}
           </Slider>
-          <Route path={`${match.path}/:friendly_url`} component={NewsDetails} />
+          <Route path={`${match.path}/:id`} component={NewsDetails} />
           
         </Styled>
         </div>

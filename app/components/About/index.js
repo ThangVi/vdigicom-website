@@ -24,7 +24,7 @@ function About() {
 	          </div>
 	          <div className="Block2" data-aos="fade-down" data-aos-duration="700" data-aos-delay="300">
 	            <p>Whether is a simple front-end website, web app or native iOS / Android App or a full enterprise grade digital platform, we work hand in hand with our clients to ensure the best possible digital solutions. </p>
-							<p>We are flexible in our approach, being able to work on a project and 'build to brief' or simply provide dedicated resources under an 'in-sourcing' model. So if you have a defined idea in mind or just need some additional resources to help progress your digital development , then please get in contact with us here.</p>
+				<p>We are flexible in our approach, being able to work on a project and 'build to brief' or simply provide dedicated resources under an 'in-sourcing' model. So if you have a defined idea in mind or just need some additional resources to help progress your digital development , then please get in contact with us here.</p>
 	          </div>
 	        </div> 
 	      </div> 

@@ -65,8 +65,8 @@ export class App extends React.PureComponent {
           <div>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route exact path="/news/:friendly_url" component={NewsDetails} />
-            <Route path="/job/:friendly_url" component={JobDetailPage} />
+            <Route exact path="/news/:id" component={NewsDetails} />
+            <Route path="/job/:id" component={JobDetailPage} />
             <Route path="" component={NotFoundPage} />
           </Switch>
           </div>

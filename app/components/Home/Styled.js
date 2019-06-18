@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {media} from 'constants/theme';
-import Homebg from 'images/bg/homebg.png';
+import Homebg from 'images/bg/homebg.jpg';
 const Styled = styled.div `
   background: url('${Homebg}') center bottom/ 100% no-repeat;
 	  .container-home {

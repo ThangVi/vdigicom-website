@@ -8,12 +8,11 @@ import React from 'react';
 import {imageLink} from 'constants/appconfig';
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
-function News(props) {
-  const newsUrl = props.news.thumb;
-  var newsImg = newsUrl ? (newsImg = imageLink+newsUrl.url) : newsImg='#';
+function News(props) {  
+  const newsImg = props.news.img;
   const date = new Date(props.news.publish_date);
   return (
-    <Link to={`${props.match.url}news/${props.news.friendly_url}`}>
+    <Link to={`${props.match.url}news/${props.news.id}`}>
       <div className="block-news">
         <div  className="news-item">
           <div className="news-img">

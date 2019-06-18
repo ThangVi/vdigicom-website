@@ -46,8 +46,8 @@ function Portfolio() {
     img: Porfolio5,
     title: 'XERO',
     link:'https://www.xero.com/'
-  }
-]
+  }]
+  
   return (
 
     <Container>
