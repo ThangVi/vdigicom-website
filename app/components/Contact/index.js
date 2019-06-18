@@ -33,9 +33,6 @@ function Contact(props) {
 						<Col xs={12} sm={12} md={12} className="custom-fadein">
 							<div className="contact">
 								<Row>
-									<Col xs={12} sm={12} md={12}>
-										<h2>Công ty TNHH Mạng viễn thông số Việt Nam</h2>
-									</Col>
 									<Col xs={12} sm={12} md={4} className="text-center">
 										<h3>Địa chỉ</h3>
 										<p>134 Hoàng Sâm, Nghĩa Đô, Cầu Giấy, Hà Nội, Việt Nam</p>
