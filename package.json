@@ -151,7 +151,7 @@
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.7.13",
     "aos": "^3.0.0-beta.6",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "6.26.0",
     "bootstrap": "^4.1.0",
     "chalk": "2.4.1",
